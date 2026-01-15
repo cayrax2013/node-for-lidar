@@ -1,0 +1,27 @@
+# Создаём проект
+cd ~
+mkdir -p ros2_project/src
+
+# Переходим в папку src
+cd ros2_project/src
+
+# Создаём пакет, отвечающий за датчик расстояния и нызываём его 'lidar'
+ros2 pkg create lidar --build-type ament_python --dependencies rclpy std_msgs
+
+# Возвращаемся в корень проекта
+cd ~/ros2_project
+
+# Собираем пакет (Всегда выполняйте эту команду из корня проекта!)
+colcon build --symlink-install
+
+# Првоеряем видит ли рос 2 наш пакет
+ros2 pkg list | grep lidar
+
+# Обновляем окружение
+source install/setup.bash
+
+# Запускаем пакет
+ros2 run lidar lidar
+
+# Проверяем, что нода появилась
+ros2 node list
