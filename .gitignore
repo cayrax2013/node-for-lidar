@@ -1,0 +1,21 @@
+# Игнорируем папки build, install, log
+build/
+install/
+log/
+
+# Игнорируем файлы сборки Colcon
+*.lock
+**/CMakeCache.txt
+**/CMakeFiles/
+**/Makefile
+**/cmake_install.cmake
+**/compile_commands.json
+
+# Игнорируем точки настройки (setup files)
+local_setup.*
+
+# Игнорируем скрытые файлы редакторов (опционально)
+.vscode/
+.idea/
+*.swp
+*~
